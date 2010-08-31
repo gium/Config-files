@@ -1,0 +1,23 @@
+[user]
+        name = Guillaume Sadegh
+        email = sadegh@lrde.epita.fr
+
+[color]
+	branch = true
+	diff = true
+	interactive = true
+	pager = true
+	status = true
+
+[diff]
+	rename = copy
+
+[alias]
+	ci = commit
+	st = status
+	co = checkout
+	cl = clone
+
+[github]
+	user = gium
+	token = 4ef7557875b9ac44ea6233cf35b19033

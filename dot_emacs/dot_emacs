@@ -1,0 +1,48 @@
+;; Guillaume SADEGH					-*- emacs-lisp -*-
+
+;; Path
+
+(unless (boundp 'user-emacs-directory)
+  (defvar user-emacs-directory "~/.emacs.d/"))
+
+(add-to-list 'load-path user-emacs-directory)
+
+;; Load files
+
+(require 'my-editing)
+(require 'my-misc)
+(require 'my-programming)
+(require 'my-gnus)
+(require 'my-writing)
+
+;; Constants
+
+(setq user-full-name "Guillaume Sadegh")
+(setq user-mail-address "sadegh@lrde.epita.fr")
+
+(c-lang-defconst c-block-stmt-2-kwds
+  "Statement keywords followed by a paren sexp and then by a substatement."
+  t    '("for" "if" "switch" "while")
+  c++  '("for" "if" "switch" "while" "catch" "foreach")
+  objc '("for" "if" "switch" "while" "@catch" "@synchronized")
+  java '("for" "if" "switch" "while" "catch" "synchronized")
+  idl  nil
+  pike '("for" "if" "switch" "while" "foreach")
+  awk  '("for" "if" "while"))
+
+;;; dot_emacs.el ends here
+
+(put 'downcase-region 'disabled nil)
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(canlock-password "297cc71f5c6ae36dc3626e00c702618d23232a57")
+ '(netsoul-location "Laptop"))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
