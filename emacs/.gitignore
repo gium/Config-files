@@ -1,0 +1,10 @@
+*.elc
+*.def
+*.out
+*~
+*.log
+*.spec
+*.status
+configure
+enetsoul
+cersti-photos
