@@ -1,0 +1,40 @@
+;; Guillaume SADEGH					-*- emacs-lisp -*-
+
+;; Path
+
+;; (require 'cl) ; a rare necessary use of REQUIRE
+(defvar *emacs-load-start* (current-time))
+
+(unless (boundp 'user-emacs-directory)
+  (defvar user-emacs-directory "~/.emacs.d/"))
+
+(add-to-list 'load-path user-emacs-directory)
+
+;; Load files
+
+(require 'my-editing)
+(require 'my-misc)
+(require 'my-programming)
+(require 'my-gnus)
+(require 'my-writing)
+
+;; Constants
+
+(setq user-full-name "Guillaume Sadegh")
+(setq user-mail-address "sadegh@lrde.epita.fr")
+
+(c-lang-defconst c-block-stmt-2-kwds
+  "Statement keywords followed by a paren sexp and then by a substatement."
+  t    '("for" "if" "switch" "while")
+  c++  '("for" "if" "switch" "while" "catch" "foreach")
+  objc '("for" "if" "switch" "while" "@catch" "@synchronized")
+  java '("for" "if" "switch" "while" "catch" "synchronized")
+  idl  nil
+  pike '("for" "if" "switch" "while" "foreach")
+  awk  '("for" "if" "while"))
+
+;; (message "My .emacs loaded in %ds" (destructuring-bind (hi lo ms) (current-time)
+;;                            (- (+ hi lo) (+ (first *emacs-load-start*) (second *emacs-load-start*)))))
+
+
+;;; dot_emacs.el ends here
