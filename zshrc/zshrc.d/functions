@@ -1,0 +1,26 @@
+#! /bin/sh                      -*- sh -*-
+
+
+my_pkill ()
+{
+    [ "x" = "x$1" ] && (echo "missing arg"; exit 1)
+    ps aux | grep "$1" | tr -s " " | cut -d' ' -f2 | xargs kill -9
+}
+
+my_dotty ()
+{
+    TMP=$(mktemp)
+    cat > "${TMP}.dot"
+    dot -Tpng -o "${TMP}.png" "${TMP}.dot"
+    xzgv "${TMP}.png"
+}
+
+weather ()
+{
+    wget 'http://xoap.weather.com/weather/local/'"$1"'?cc=*&link=xoap&prod=xoap&par=1168658022&unit=m&key=8a9cf7b11f89c65a&unit=m' -O - -o /dev/null | awk 'BEGIN {seen=0;} (/<cc>/) {seen=1;} (seen) {print; if (/<t>/) {exit;} } '  | sed 'N;N;N;N;N;s+.*<obst>\(.*\)</obst>.*<tmp>\(.*\)</tmp>.*<t>\(.*\)</t>.*+\1: \2°C (\3)+;s+[,/].*:+:+'
+}
+
+weather_paris ()
+{
+    weather FRXX0076
+}

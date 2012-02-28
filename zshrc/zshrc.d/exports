@@ -1,0 +1,27 @@
+#! /bin/sh                      -*- sh -*-
+
+export LESS='--RAW-CONTROL-CHARS --tabs=8 -R'
+export LESSOPEN='| /usr/bin/lesspipe %s'
+export LESSOPEN="|/usr/local/bin/lesspipe.sh %s"
+export LESSCLOSE='/usr/bin/lesspipe %s %s'
+export LESSCHARSET="utf-8"
+export FULLNAME="Guillaume Sadegh"
+export EMAIL="guillaume@sadegh-beyki.com"
+export JAVA_HOME=/usr/lib/jvm/java-1.6.0-openjdk
+export CFLAGS="-W -Wall"
+export CXXFLAGS="-W -Wall"
+export LD_LIBRARY_PATH="/usr/local/lib"
+export PAGER=/usr/bin/less
+export READNULLCMD=${PAGER:-/usr/bin/less}
+export PERLLIB='/usr/share/perl5:/usr/lib/perl5'
+export EDITOR='emacs -nw -Q'
+export PATH="$PATH:/opt/Adobe/Reader8/bin:/home/guillaume/bin:/home/guillaume/chrome-linux:/home/guillaume/.gem/ruby/1.8/"
+export HISTORY=10000
+export SAVEHIST=10000
+export HISTFILE=$HOME/.history
+
+
+if [ -x /usr/bin/dircolors ]; then
+    [ -r /etc/dir_colors ] && eval "`dircolors /etc/dir_colors`"
+    [ -r ~/.dir_colors ] && eval "`dircolors ~/.dir_colors`"
+fi

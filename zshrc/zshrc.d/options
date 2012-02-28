@@ -1,0 +1,37 @@
+#! /bin/sh                      -*- sh -*-
+
+setopt auto_cd
+setopt auto_list
+setopt auto_param_keys
+setopt auto_param_slash
+setopt auto_pushd
+setopt auto_remove_slash
+unsetopt beep
+unsetopt bg_nice
+setopt chase_links
+unsetopt clobber
+setopt complete_aliases
+setopt complete_in_word
+setopt correct
+setopt equals
+setopt extended_history
+setopt extended_glob
+setopt glob_dots
+setopt hash_cmds
+setopt hash_dirs
+setopt hist_verify
+setopt hist_ignore_dups
+setopt hist_ignore_space
+unsetopt hup
+unsetopt ignore_eof
+unsetopt list_ambiguous
+unsetopt list_beep
+setopt mail_warning
+setopt magic_equal_subst
+setopt no_bg_nice
+setopt numericglobsort
+setopt print_exit_value
+setopt pushd_ignore_dups
+setopt pushd_silent
+setopt pushd_to_home
+unsetopt rm_star_silent

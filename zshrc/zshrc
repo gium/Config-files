@@ -1,0 +1,29 @@
+# zshrc -- Guillaume Sadegh					 -*- sh -*-
+
+# colors.
+
+BLACK="[30m"
+RED="[31m"
+GREEN="[32m"
+YELLOW="[33m"
+BLUE="[34m"
+MAGENTA="[35m"
+CYAN="[36m"
+WHITE="[37m"
+BOLD="[01m"
+NORMAL="[00m"
+
+. ~/.zshrc.d/aliases
+. ~/.zshrc.d/exports
+. ~/.zshrc.d/prompt
+. ~/.zshrc.d/keys
+. ~/.zshrc.d/options
+. ~/.zshrc.d/completion
+. ~/.zshrc.d/functions
+
+if [ -f ~/.login ]; then
+    . ~/.login
+else
+    xset b off
+    xset r rate 300 100
+fi

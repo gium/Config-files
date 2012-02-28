@@ -1,0 +1,20 @@
+#! /bin/sh                      -*- sh -*-
+
+alias ls="ls --color=auto --human-readable"
+alias l="ls"
+alias ll="ls -l"
+alias la="ls -a"
+alias lla="ls -l -a"
+alias open='xdg-open'
+alias makej='make -j 2'
+alias rm="${RM} --interactive"
+alias df="df --human-readable"
+alias du="du --human-readable"
+alias mountkey='sudo mount -t vfat /dev/sdb1 /media/data'
+alias umountkey='sudo umount /media/data'
+alias lock=xtrlock
+alias mplayer='mplayer -subfont-text-scale 3'
+alias grep='grep --color=auto'
+alias right='find . -type f -exec chmod 644 {} \; && find . -type d -exec chmod 755 {} \;'
+alias windows='qemu -m 384 -localtime -usb -usbdevice tablet  -net nic   -soundhw all /media/sda6/windows.img'
+alias e='emacs -nw -Q'

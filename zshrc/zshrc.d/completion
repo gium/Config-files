@@ -1,0 +1,46 @@
+#! /bin/sh                      -*- sh -*-
+
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*' completer _expand _complete _match _approximate _prefix
+zstyle ':completion:*' format '-=> %d'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' insert-unambiguous true
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'l:|=* r:|=*' 'r:|[._-]=* r:|=*'
+zstyle ':completion:*' max-errors 2
+zstyle ':completion:*' menu select=5
+zstyle ':completion:*' original true
+zstyle ':completion:*' squeeze-slashes true
+zstyle ':completion:*' verbose true
+zstyle ':completion:*:processes' list-colors '=(#b)(?????)(#B)?????????????????????????????????([^ ]#/)#(#b)([^ /]#)*=00=01;31=01;33'
+zstyle :compinstall filename '~/.zshrc.comp'
+zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
+			     /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*:descriptions' format '%B%d%b'
+zstyle ':completion:*:messages' format '%d'
+zstyle ':completion:*:warnings' format 'No matches for: %d'
+zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:history-words:*'  verbose yes
+zstyle ':completion:*:history-words' stop yes
+zstyle ':completion:*:history-words' remove-all-dups yes
+zstyle ':completion:*:history-words' list yes
+zstyle ':completion:*:history-words' menu yes
+
+# Zen
+if [ -d /home/guillaume/.zen ]; then
+    fpath=(
+        $fpath
+        /home/guillaume/.zen/zsh/scripts
+        /home/guillaume/.zen/zsh/zle )
+    autoload -U zen
+fi
+
+autoload -U zmv
+zmodload zsh/complist
+autoload -U ~/.zsh_comp/*(:t)
+
+autoload -U compinit
+compinit
